@@ -1,0 +1,30 @@
+INTERESTS = \
+[('1','Arts'),
+('2','Arts & Multimedia'),
+('3','Astrophysics'),
+('4','Climate'),
+('5','Coding'),
+('6','Data Analysis'),
+('7','Data Visualization'),
+('8','Diversity & Equity'),
+('9','Earth'),
+('10','Earth Science'),
+('11','Games'),
+('12','Graphic Design'),
+('13','Hardware'),
+('14','Open Science'),
+('15','Planets & Moons'),
+('16','Public Speaking'),
+('17','Software'),
+('18','Space Exploration'),
+('19','Statistics'),
+('20','Sun'),
+('21','Videography/Photography'),
+('22','Web Design'),
+('23','Web Development'),
+('24','Writing & Communications')]
+
+EXPERIENCE = \
+[('1','Beginner'),
+('2','Intermediate'),
+('3','Advanced')]

@@ -1,0 +1,31 @@
+{% extends "base.html" %} 
+
+{% block title %} - Sign Up{% endblock %}
+
+{% block content %}
+  <form method="POST" class="mb-4">
+    {{ form.hidden_tag() }}
+    <div class="form-group">
+      <br>
+      {{ form.first_name.label(class="form-label") }}
+      {{ form.first_name(class="form-control") }}
+      {{ form.last_name.label(class="form-label") }}
+      {{ form.last_name(class="form-control") }}
+      {{ form.email.label(class="form-label") }}
+      {{ form.email(class="form-control") }}
+      {{ form.password1.label(class="form-label") }}
+      {{ form.password1(class="form-control") }}
+      {{ form.password2.label(class="form-label") }}
+      {{ form.password2(class="form-control") }}
+      {{ form.age.label(class="form-label") }}
+      {{ form.age(class="form-control") }}
+      {{ form.experience.label(class="form-label") }}
+      {{ form.experience(class="form-control") }}
+      {{ form.affiliation.label(class="form-label") }}
+      {{ form.affiliation(class="form-control") }}
+      {{ form.interest.label(class="form-label") }}
+      {{ form.interest(class="form-control") }}
+    </div>
+    <button type="submit" class="btn btn-primary mt-2">Create User</button>
+  </form>
+{% endblock %}

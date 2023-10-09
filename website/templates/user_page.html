@@ -1,0 +1,61 @@
+{% extends "base.html" %} 
+
+{% block title %} - {{user.first_name}}'s Page{% endblock %}
+
+{% block content %}
+    <br>
+    <h1>User Account Information</h1>
+    <form action="/" method="POST">
+        <label for="firstName">First name:</label>
+        <input class="form-control" type="text" id="first_name" name="first_name" value="{{user.first_name}}">
+        <label for="lastName">Last name:</label>
+        <input class="form-control" type="text" id="last_name" name="last_name" value="{{user.last_name}}">
+        <label for="email">Email:</label>
+        <input class="form-control" type="email" id="email" name="email" value="{{user.email}}">
+        <label for="age">Age:</label>
+        <input class="form-control" type="number" id="age" name="age" value="{{user.age}}">
+        <label for="experience">Experience:</label>
+        <input class="form-control" type="experience" id="experience" name="experience" value="{{user.experience}}">
+        <label for="affiliation">Affiliation:</label>
+        <input class="form-control" type="affiliation" id="affiliation" name="affiliation" value="{{user.affiliation}}"><br>
+        <label for="interests">Interests: </label>
+            {% for i in user.interest %}
+            <a class="btn btn-primary">{{i}}</a>
+            {% endfor %}        
+        <br>
+        <br>
+        <input type="submit" value="Save Changes">
+    </form>
+
+    {% if user_projects %}
+    <br>
+    <h3>User Projects</h3>
+    {% else %}
+    <br>
+    <h3>No Projects</h3>
+    {% endif %}
+
+
+<div class="container">
+    {% for proj in user_projects %}
+    <a href="/project_page?query=&id={{ proj.project_id }}" class="text-decoration-none text-dark">
+      <div class="col-md-12 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">{{ proj.title }}</h5>
+            <p class="card-text">{{ proj.description }}</p>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><strong>Experience:</strong> {{ proj.experience_level }}</li>
+              <li class="list-group-item"><strong>Skills:</strong> {{ proj.skills }}</li>
+              <li class="list-group-item"><strong>Date Posted:</strong> {{ proj.date_posted.strftime('%Y-%m-%d') }}</li>
+            </ul>
+            <a href="/deleteproj?query=&id={{ proj.project_id }}" class="btn btn-primary">Delete</a>
+          </div>
+        </div>
+    </div>
+    </a>
+    {% endfor %}
+  </div>
+
+  
+{% endblock %}

@@ -1,0 +1,9 @@
+flask
+Werkzeug==2.3.7
+Flask-SQLAlchemy
+flask-login
+Flask-Paginate
+alembic
+Flask-WTF
+email_validator
+Werkzeug==2.3.7

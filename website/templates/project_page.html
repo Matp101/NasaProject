@@ -1,0 +1,26 @@
+{% extends "base.html" %} 
+
+{% block title %} - {{project.title}}{% endblock %}
+
+{% block content %}
+    <br>
+    <h1>{{project.title}}</h1>
+
+    <div class="body">
+        <p class="body">{{ project.description }}</p>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><strong>Experience:</strong> {{ project.experience_level }}</li>
+          <li class="list-group-item"><strong>Skills:</strong> {{ project.skills }}</li>
+          <li class="list-group-item"><strong>Date Posted:</strong> {{ project.date_posted.strftime('%Y-%m-%d') }}</li>
+        </ul>
+    </div>
+    
+
+    {% if current_user.is_authenticated %}
+    <a href="mailto:{{ project.user.email }}?subject=Project%20Application%20-%20{{ project.title }}&body=Dear%20Project%20Manager,%0D%0A%0D%0AI%20would%20like%20to%20apply%20for%20the%20{{ project.title }}%20position.%0D%0A%0D%0AThank%20you,%0D%0A{{ current_user.first_name if current_user.first_name else 'Your%20Name' }}" class="btn btn-primary">Apply Now</a>
+  {% else %}
+    <a href="mailto:{{ project.user.email }}?subject=Project%20Application%20-%20{{ project.title }}&body=Dear%20Project%20Manager,%0D%0A%0D%0AI%20would%20like%20to%20apply%20for%20the%20{{ project.title }}%20position.%0D%0A%0D%0AThank%20you,%0D%0AYour%20Name" class="btn btn-primary">Apply Now</a>
+  {% endif %}
+
+  
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %} - Create Project{% endblock %}
+
+{% block content %}
+  <h1 class="mt-2">Create Project</h1>
+  <form method="POST" class="mb-4">
+    {{ form.hidden_tag() }}
+    <div class="form-group">
+      {{ form.title.label(class="form-label") }}
+      {{ form.title(class="form-control") }}
+      {{ form.description.label(class="form-label") }}
+      {{ form.description(class="form-control") }}
+      {{ form.experience_level.label(class="form-label") }}
+      {{ form.experience_level(class="form-control") }}
+      <!-- TODO: THIS -->
+      {{ form.skills.label(class="form-label") }}
+      {{ form.skills(class="form-control") }}
+    </div>
+    <br>
+    <input type="checkbox" id="disclaimerCheckbox"> I accept that by proceeding to create this posting my email will become public to those who apply.
+    <br>
+    <button type="submit" id="submitButton" class="btn btn-primary mt-2" disabled="">Create Project</button>
+  </form>
+  <script>
+    const disclaimerCheckbox = document.getElementById('disclaimerCheckbox');
+    const submitButton = document.getElementById('submitButton');
+    disclaimerCheckbox.addEventListener('change', function() {
+        if (this.checked) {
+            submitButton.disabled = false;
+        } else {
+            submitButton.disabled = true;
+        }
+    });
+</script>
+{% endblock %}
