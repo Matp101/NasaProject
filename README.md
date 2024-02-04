@@ -1,6 +1,43 @@
 # A Marketplace for Open Science Projects
- NasaApps2023
+### Nasa Space Apps 2023
 
+Our platform is a cutting-edge marketplace designed for open-source projects that empowers collaboration and innovation across the globe. As proud winners of the second place in our local division, we have developed a suite of features that streamline the process of finding, managing, and contributing to open-source projects. With functionalities such as advanced search capabilities, user project creation, and management, our platform stands out as a hub for open-source enthusiasts. Users can effortlessly communicate with others through integrated messaging, apply filters to refine their search, and much more, creating a comprehensive ecosystem for open science collaboration.
+
+## Getting Started with the Platform
+### Prerequisites
+
+Before you start, make sure you have installed the necessary requirements which include Python, Flask, Docker, and other dependencies listed in our requirements.txt file.
+Running the Application
+
+Our platform can be run locally or in a containerized environment, offering flexibility and ease of use. Here's how to get it up and running:
+Local Setup with Flask
+
+1. Clone the repository to your local machine.
+2. Open a terminal and type `cd NasaProject` to navigate to the project directory.
+3. Install the dependencies with `pip install -r requirements.txt`.
+4. Start the server using `flask.sh` or `flask.bat` depending on your operating system. This will set the necessary environment variables and start the Flask server.
+
+Containerized Setup with Docker
+
+1. Ensure Docker is installed and running on your system.
+2. Build the Docker image using `docker build -t NasaProject .` from the root of the project directory.
+3. Once the build is complete, run the container using `docker run -p 5000:5000 NasaProject`.
+4. The platform should now be accessible at localhost:5000 on your browser.
+
+### Accessing the Platform
+
+After starting the server by either method, open your web browser and go to http://localhost:5000. You should be greeted with the homepage of our Open Projects Marketplace.
+
+## Gallery
+#### Homepage
+![Homepage](res/MainPage.png)
+#### Project Page
+![Project Page](res/Search.png)
+#### User Profile
+![User Profile](res/UserPage.png)
+
+---
+# Project Description
 ## SUMMARY
 There are many different open science and open-source projects and tools, but no efficient way to match project creators with interested collaborators who possess the skills required to contribute. Your challenge is to create a solution that will help people who are looking for open-source projects to work on and project creators who need skilled contributors to find each other and communicate.
 
